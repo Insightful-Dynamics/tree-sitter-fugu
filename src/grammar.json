@@ -1,0 +1,867 @@
+{
+  "name": "fugu",
+  "word": "_wordContent",
+  "rules": {
+    "Program": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_statement"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_terminator"
+              }
+            ]
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_statement"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "Comment"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "Command"
+        }
+      ]
+    },
+    "_terminator": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "Comment": {
+      "type": "PATTERN",
+      "value": "#[^\\n]+"
+    },
+    "Command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_word"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "arguments",
+              "content": {
+                "type": "SYMBOL",
+                "name": "WordList"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "WordList": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_word"
+      }
+    },
+    "_word": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "Word"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "QuotedWord"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ConcatenatedWord"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "Block"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ParenthesizedExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "EvaluatedExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "EvaluatedBlock"
+        }
+      ]
+    },
+    "Word": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_wordContent"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "EscapeSequence"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "PREC_DYNAMIC",
+                "value": 1,
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_concat"
+                }
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_wordContent"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "EscapeSequence"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "_wordContent": {
+      "type": "PATTERN",
+      "value": "[^$\\s\\\\\\(){};\"\"]+"
+    },
+    "EscapeSequence": {
+      "type": "PATTERN",
+      "value": "\\\\."
+    },
+    "QuotedWord": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_quotedWordContent"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "EvaluatedExpression"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "EvaluatedBlock"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "EscapeSequence"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "\""
+        }
+      ]
+    },
+    "_quotedWordContent": {
+      "type": "PATTERN",
+      "value": "[^$\\\\\\()\"]+"
+    },
+    "ConcatenatedWord": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "Word"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "ParenthesizedExpression"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_concat"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "Word"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "ParenthesizedExpression"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "Block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "_statement"
+                      },
+                      {
+                        "type": "BLANK"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "_terminator"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_statement"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "EvaluatedExpression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "$"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ParenthesizedExpression"
+        }
+      ]
+    },
+    "EvaluatedBlock": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "$"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "Block"
+        }
+      ]
+    },
+    "Expression": {
+      "type": "SYMBOL",
+      "name": "_expression"
+    },
+    "_expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "VariableExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "NumberExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_binaryExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ParenthesizedExpression"
+        }
+      ]
+    },
+    "VariableExpression": {
+      "type": "SYMBOL",
+      "name": "Word"
+    },
+    "NumberExpression": {
+      "type": "PATTERN",
+      "value": "[-+]?([0-9]*\\.)?[0-9]+"
+    },
+    "_binaryExpression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "ExponentExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "MultiplicationExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "DivisionExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "AdditionExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "SubtractionExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_relationalExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_equalityExpression"
+        }
+      ]
+    },
+    "ExponentExpression": {
+      "type": "PREC_LEFT",
+      "value": "exponent",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "**"
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "MultiplicationExpression": {
+      "type": "PREC_LEFT",
+      "value": "multiplicative",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "*"
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "DivisionExpression": {
+      "type": "PREC_LEFT",
+      "value": "multiplicative",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "/"
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "AdditionExpression": {
+      "type": "PREC_LEFT",
+      "value": "additive",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "+"
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "SubtractionExpression": {
+      "type": "PREC_LEFT",
+      "value": "additive",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "-"
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "_relationalExpression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "LessThanExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "LessThanOrEqualToExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "GreaterThanExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "GreaterThanOrEqualToExpression"
+        }
+      ]
+    },
+    "LessThanExpression": {
+      "type": "PREC_LEFT",
+      "value": "relational",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "<"
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "LessThanOrEqualToExpression": {
+      "type": "PREC_LEFT",
+      "value": "relational",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "<="
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "GreaterThanExpression": {
+      "type": "PREC_LEFT",
+      "value": "relational",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": ">"
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "GreaterThanOrEqualToExpression": {
+      "type": "PREC_LEFT",
+      "value": "relational",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": ">="
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "_equalityExpression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "EqualToExpression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "NotEqualToExpression"
+        }
+      ]
+    },
+    "EqualToExpression": {
+      "type": "PREC_LEFT",
+      "value": "equality",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "=="
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "NotEqualToExpression": {
+      "type": "PREC_LEFT",
+      "value": "equality",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "!="
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "ParenthesizedExpression": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "SYMBOL",
+          "name": "Expression"
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
+    }
+  },
+  "extras": [
+    {
+      "type": "STRING",
+      "value": " "
+    },
+    {
+      "type": "STRING",
+      "value": "\t"
+    }
+  ],
+  "conflicts": [
+    [
+      "Word"
+    ]
+  ],
+  "precedences": [
+    [
+      {
+        "type": "STRING",
+        "value": "postfix"
+      },
+      {
+        "type": "STRING",
+        "value": "prefix"
+      },
+      {
+        "type": "STRING",
+        "value": "exponent"
+      },
+      {
+        "type": "STRING",
+        "value": "multiplicative"
+      },
+      {
+        "type": "STRING",
+        "value": "additive"
+      },
+      {
+        "type": "STRING",
+        "value": "relational"
+      },
+      {
+        "type": "STRING",
+        "value": "equality"
+      }
+    ]
+  ],
+  "externals": [
+    {
+      "type": "SYMBOL",
+      "name": "_concat"
+    },
+    {
+      "type": "STRING",
+      "value": "}"
+    },
+    {
+      "type": "STRING",
+      "value": ")"
+    }
+  ],
+  "inline": [
+    "_terminator"
+  ],
+  "supertypes": []
+}
+

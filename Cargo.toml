@@ -1,0 +1,26 @@
+[package]
+name = "tree-sitter-chimera"
+description = "chimera grammar for the tree-sitter parsing library"
+version = "0.0.1"
+keywords = ["incremental", "parsing", "chimera"]
+categories = ["parsing", "text-editors"]
+repository = "https://github.com/Zealandia-Systems/tree-sitter-chimera"
+edition = "2018"
+license = "MIT"
+
+build = "bindings/rust/build.rs"
+include = [
+  "bindings/rust/*",
+  "grammar.js",
+  "queries/*",
+  "src/*",
+]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter = "~0.20"
+
+[build-dependencies]
+cc = "1.0"

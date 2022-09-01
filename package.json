@@ -1,0 +1,19 @@
+{
+	"name": "tree-sitter-fugu",
+	"packageManager": "yarn@3.2.2",
+	"dependencies": {
+		"nan": "^2.16.0"
+	},
+	"devDependencies": {
+		"tree-sitter-cli": "^0.20.6"
+	},
+	"main": "bindings/node",
+	"tree-sitter": [
+		{
+			"scope": "source.fugu",
+			"file-types": [
+				"fugu"
+			]
+		}
+	]
+}

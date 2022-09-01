@@ -1,0 +1,38 @@
+set wcs 1
+set probeDistance 100
+set probeFeedrate 500
+set ballDiameter 5
+set xSize 100
+set ySize 100
+set xStep 10
+set ystep 10
+set xCount ${floor $(xSize / xStep)}
+set yCount ${floor $(ySize / yStep)}
+set start position
+
+set points ${list-create}
+
+set i 0
+set x 0
+
+while (x < xCount) {
+	set y 0
+
+	while (y < yCount) {
+		G90 G0 "X$(start.x + x * xStep)" "Y$(start.y + y * yStep)"
+
+		G91 G38.2 "Z$(probeDistance)" "F$(probeFeedrate)"
+		wait
+
+		G90 G0 "Z$(start.z)"
+
+		list-append points position
+
+		set y $(y + 1)
+		set i $(i + 1)
+	}
+
+	set x $(x + 1)
+}
+
+export points

@@ -1,0 +1,1831 @@
+[
+  {
+    "type": "AdditionExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "Block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Command",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "Command",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "WordList",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "Block",
+            "named": true
+          },
+          {
+            "type": "ConcatenatedWord",
+            "named": true
+          },
+          {
+            "type": "EvaluatedBlock",
+            "named": true
+          },
+          {
+            "type": "EvaluatedExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "QuotedWord",
+            "named": true
+          },
+          {
+            "type": "Word",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "ConcatenatedWord",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "ParenthesizedExpression",
+          "named": true
+        },
+        {
+          "type": "Word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "DivisionExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "EqualToExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "EvaluatedBlock",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "Block",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "EvaluatedExpression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ParenthesizedExpression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ExponentExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "Expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "AdditionExpression",
+          "named": true
+        },
+        {
+          "type": "DivisionExpression",
+          "named": true
+        },
+        {
+          "type": "EqualToExpression",
+          "named": true
+        },
+        {
+          "type": "ExponentExpression",
+          "named": true
+        },
+        {
+          "type": "GreaterThanExpression",
+          "named": true
+        },
+        {
+          "type": "GreaterThanOrEqualToExpression",
+          "named": true
+        },
+        {
+          "type": "LessThanExpression",
+          "named": true
+        },
+        {
+          "type": "LessThanOrEqualToExpression",
+          "named": true
+        },
+        {
+          "type": "MultiplicationExpression",
+          "named": true
+        },
+        {
+          "type": "NotEqualToExpression",
+          "named": true
+        },
+        {
+          "type": "NumberExpression",
+          "named": true
+        },
+        {
+          "type": "ParenthesizedExpression",
+          "named": true
+        },
+        {
+          "type": "SubtractionExpression",
+          "named": true
+        },
+        {
+          "type": "VariableExpression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "GreaterThanExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "GreaterThanOrEqualToExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "LessThanExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "LessThanOrEqualToExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "MultiplicationExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "NotEqualToExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "ParenthesizedExpression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "Expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "Program",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "Command",
+          "named": true
+        },
+        {
+          "type": "Comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "QuotedWord",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "EscapeSequence",
+          "named": true
+        },
+        {
+          "type": "EvaluatedBlock",
+          "named": true
+        },
+        {
+          "type": "EvaluatedExpression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "SubtractionExpression",
+    "named": true,
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      },
+      "right": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "AdditionExpression",
+            "named": true
+          },
+          {
+            "type": "DivisionExpression",
+            "named": true
+          },
+          {
+            "type": "EqualToExpression",
+            "named": true
+          },
+          {
+            "type": "ExponentExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanExpression",
+            "named": true
+          },
+          {
+            "type": "GreaterThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanExpression",
+            "named": true
+          },
+          {
+            "type": "LessThanOrEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "MultiplicationExpression",
+            "named": true
+          },
+          {
+            "type": "NotEqualToExpression",
+            "named": true
+          },
+          {
+            "type": "NumberExpression",
+            "named": true
+          },
+          {
+            "type": "ParenthesizedExpression",
+            "named": true
+          },
+          {
+            "type": "SubtractionExpression",
+            "named": true
+          },
+          {
+            "type": "VariableExpression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "VariableExpression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "Word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "Word",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "EscapeSequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "WordList",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "Block",
+          "named": true
+        },
+        {
+          "type": "ConcatenatedWord",
+          "named": true
+        },
+        {
+          "type": "EvaluatedBlock",
+          "named": true
+        },
+        {
+          "type": "EvaluatedExpression",
+          "named": true
+        },
+        {
+          "type": "ParenthesizedExpression",
+          "named": true
+        },
+        {
+          "type": "QuotedWord",
+          "named": true
+        },
+        {
+          "type": "Word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "$",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
+  },
+  {
+    "type": "**",
+    "named": false
+  },
+  {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": "Comment",
+    "named": true
+  },
+  {
+    "type": "EscapeSequence",
+    "named": true
+  },
+  {
+    "type": "NumberExpression",
+    "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]
