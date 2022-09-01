@@ -2,7 +2,8 @@
 	"name": "@insightful-dynamics/tree-sitter-fugu",
 	"packageManager": "yarn@3.2.2",
 	"dependencies": {
-		"nan": "^2.16.0"
+		"nan": "^2.16.0",
+		"node-gyp": "^9.1.0"
 	},
 	"devDependencies": {
 		"tree-sitter-cli": "^0.20.6"

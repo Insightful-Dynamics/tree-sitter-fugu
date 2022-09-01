@@ -12,6 +12,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@insightful-dynamics/tree-sitter-fugu@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@insightful-dynamics/tree-sitter-fugu@workspace:."
+  dependencies:
+    nan: ^2.16.0
+    node-gyp: ^9.1.0
+    tree-sitter-cli: ^0.20.6
+  languageName: unknown
+  linkType: soft
+
 "@npmcli/fs@npm:^2.1.0":
   version: 2.1.2
   resolution: "@npmcli/fs@npm:2.1.2"
@@ -597,7 +607,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp@npm:latest":
+"node-gyp@npm:^9.1.0, node-gyp@npm:latest":
   version: 9.1.0
   resolution: "node-gyp@npm:9.1.0"
   dependencies:
@@ -838,15 +848,6 @@ __metadata:
   checksum: 2b716ab296b5cab28235ecbf8c834b4a4bcd12b4ec40df75f238d5461127f367b63dd86b068d1b0bc66f38d91b1741fad1681faa804a6d39d3281eb07ae83cfa
   languageName: node
   linkType: hard
-
-"tree-sitter-fugu@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "tree-sitter-fugu@workspace:."
-  dependencies:
-    nan: ^2.16.0
-    tree-sitter-cli: ^0.20.6
-  languageName: unknown
-  linkType: soft
 
 "unique-filename@npm:^1.1.1":
   version: 1.1.1
