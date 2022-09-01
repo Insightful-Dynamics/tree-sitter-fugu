@@ -51,7 +51,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "tree-sitter-chimera"
+name = "tree-sitter-fugu"
 version = "0.0.1"
 dependencies = [
  "cc",

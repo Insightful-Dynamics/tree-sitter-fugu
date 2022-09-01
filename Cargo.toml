@@ -1,10 +1,10 @@
 [package]
-name = "tree-sitter-chimera"
-description = "chimera grammar for the tree-sitter parsing library"
+name = "tree-sitter-fugu"
+description = "Fugu grammar for the tree-sitter parsing library"
 version = "0.0.1"
-keywords = ["incremental", "parsing", "chimera"]
+keywords = ["incremental", "parsing", "fugu"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/Zealandia-Systems/tree-sitter-chimera"
+repository = "https://github.com/Insightful-Dynamics/tree-sitter-fugu"
 edition = "2018"
 license = "MIT"
 

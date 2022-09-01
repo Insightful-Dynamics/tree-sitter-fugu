@@ -4,7 +4,7 @@
 
 using namespace v8;
 
-extern "C" TSLanguage *tree_sitter_fugu_gcode();
+extern "C" TSLanguage *tree_sitter_fugu();
 
 namespace
 {
@@ -19,9 +19,9 @@ namespace
 
 		Local<Function> constructor = Nan::GetFunction(tpl).ToLocalChecked();
 		Local<Object> instance = constructor->NewInstance(Nan::GetCurrentContext()).ToLocalChecked();
-		Nan::SetInternalFieldPointer(instance, 0, tree_sitter_chimera());
+		Nan::SetInternalFieldPointer(instance, 0, tree_sitter_fugu());
 
-		Nan::Set(instance, Nan::New("name").ToLocalChecked(), Nan::New("fugu_gcode").ToLocalChecked());
+		Nan::Set(instance, Nan::New("name").ToLocalChecked(), Nan::New("fugu").ToLocalChecked());
 		Nan::Set(module, Nan::New("exports").ToLocalChecked(), instance);
 	}
 
