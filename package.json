@@ -1,5 +1,5 @@
 {
-	"name": "tree-sitter-fugu",
+	"name": "@insightful-dynamics/tree-sitter-fugu",
 	"packageManager": "yarn@3.2.2",
 	"dependencies": {
 		"nan": "^2.16.0"
