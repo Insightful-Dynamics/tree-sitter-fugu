@@ -9,6 +9,7 @@
 		"tree-sitter-cli": "^0.20.6"
 	},
 	"main": "bindings/node",
+	"gypfile": true,
 	"tree-sitter": [
 		{
 			"scope": "source.fugu",
