@@ -2,7 +2,7 @@
 	"name": "@insightful-dynamics/tree-sitter-fugu",
 	"packageManager": "yarn@3.2.2",
 	"dependencies": {
-		"nan": "^2.16.0",
+		"nan": "github:jkleinsc/nan#remove_accessor_signature",
 		"node-gyp": "^9.1.0"
 	},
 	"devDependencies": {
@@ -10,9 +10,6 @@
 	},
 	"main": "bindings/node",
 	"gypfile": true,
-	"resolutions": {
-		"nan": "github:jkleinsc/nan#remove_accessor_signature"
-	},
 	"tree-sitter": [
 		{
 			"scope": "source.fugu",
